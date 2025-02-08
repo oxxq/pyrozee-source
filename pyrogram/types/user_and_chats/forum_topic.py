@@ -69,5 +69,5 @@ class ForumTopic(Object):
             closed=getattr(forum_topic, "closed", None),
             pinned=getattr(forum_topic, "pinned", None),
             short=getattr(forum_topic, "short", None),
-            icon_emoji_id=getattr(forum_topic, "icon_emoji_id", None)
+            icon_emoji_id=getattr(forum_topic, "icon_emoji_id", None),
         )

@@ -1,4 +1,3 @@
-
 class SeqNo:
     def __init__(self):
         self.content_related_messages_sent = 0

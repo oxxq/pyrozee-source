@@ -52,7 +52,7 @@ setup(
         "Topic :: Communications :: Chat",
         "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Libraries :: Python Modules",
-        "Topic :: Software Development :: Libraries :: Application Frameworks"
+        "Topic :: Software Development :: Libraries :: Application Frameworks",
     ],
     keywords="telegram chat messenger mtproto api client library python",
     project_urls={
@@ -67,5 +67,5 @@ setup(
     },
     packages=find_packages(exclude=["compiler*", "tests*"]),
     zip_safe=False,
-    install_requires=requires
+    install_requires=requires,
 )

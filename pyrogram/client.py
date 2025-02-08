@@ -1,4 +1,12 @@
-from asyncio import Semaphore, Lock, Event, CancelledError, TimeoutError, get_event_loop, wait_for
+from asyncio import (
+    Semaphore,
+    Lock,
+    Event,
+    CancelledError,
+    TimeoutError,
+    get_event_loop,
+    wait_for,
+)
 from collections import OrderedDict
 from functools import partial
 from inspect import iscoroutinefunction
@@ -753,19 +761,13 @@ class Client(Methods):
 
         makedirs(directory, exist_ok=True) if not in_memory else None
         temp_file_path = (
-            path.abspath(sub("\\\\", "/", path.join(directory, file_name)))
-            + ".temp"
+            path.abspath(sub("\\\\", "/", path.join(directory, file_name))) + ".temp"
         )
         file = BytesIO() if in_memory else open(temp_file_path, "wb")
 
         try:
             async for chunk in self.get_file(
-                file_id,
-                file_size,
-                0,
-                0,
-                progress,
-                progress_args
+                file_id, file_size, 0, 0, progress, progress_args
             ):
                 file.write(chunk)
         except BaseException as e:
@@ -1019,6 +1021,7 @@ class Client(Methods):
     @lru_cache(maxsize=128)
     def guess_extension(self, mime_type: str) -> Optional[str]:
         return self.mimetypes.guess_extension(mime_type)
+
 
 class Cache:
     def __init__(self, capacity: int):
