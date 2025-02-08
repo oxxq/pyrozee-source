@@ -1,0 +1,8 @@
+-r requirements.txt
+
+aiosqlite
+pymediainfo
+pytest
+pytest-asyncio
+pytest-cov
+twine
